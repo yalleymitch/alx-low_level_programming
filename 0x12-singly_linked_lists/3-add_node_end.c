@@ -6,7 +6,7 @@
  * @head: shows Double Pointer to the list_t list
  * @str: it is a string to put in the new node
  *
- * Return: returns the new element's address, or NULL if it fails to function or work.
+ * Return: returns new element's address,NULL if it fails to function or work.
  */
 
 list_t *add_node_end(list_t **head, const char *str)
