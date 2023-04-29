@@ -3,18 +3,18 @@
 #include <stdlib.h>
 
 /**
- * free_list - liberates a connected
+ * free_list - it liberates a connected link
  * *@head: list_t list must be released.
  */
 void free_list(list_t *head)
 {
-	list_t *temp;
+	list_t *emp;
 
 	while (head)
 {
-	temp = head->next;
+	emp = head->next;
 	free(head->str);
-	head = temp;
+	head = emp;
 	free(head);
 }
 }
