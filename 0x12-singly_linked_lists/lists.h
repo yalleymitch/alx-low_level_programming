@@ -1,6 +1,9 @@
 #ifndef LISTS_H
 #define LISTS_H
 
+#include <stdlib.h>
+#include <stddef.h>
+
 /**
  * struct list_s - a list that is only connected once
  * @str: string - it is the malloc'ed string
