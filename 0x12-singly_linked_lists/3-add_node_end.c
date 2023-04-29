@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include "lists.h"
 #include <string.h>
-
-
 /**
  * add_node_end - it adds or modifies a new node at the end of a linked list
  * @head: shows Double Pointer to the list_t list
@@ -10,33 +8,41 @@
  *
  * Return: returns the new element's address, or NULL if it fails to function or work.
  */
+
 list_t *add_node_end(list_t **head, const char *str)
 {
- list_t *new;
- list_t *temp = *head;
- unsigned int re = 0;
+	char *re;
+	int len;
+	list_t *new, *last;
 
- while (str[re])
- re++;
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
+		return (NULL);
 
- new = malloc(sizeof(list_t));
- if (!new)
- return (NULL);
+	re = strre(str);
+	if (str == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
 
- new->str = strdup(str);
- new->re = re;
- new->next = NULL;
+	for (len = 0; str[len];)
+		len++;
 
- if (*head == NULL)
- {
- *head = new;
- return (new);
- }
+	new->str = re;
+	new->len = len;
+	new->next = NULL;
 
- while (temp->next)
- temp = temp->next;
+	if (*head == NULL)
+		*head = new;
 
- temp->next = new;
+	else
+	{
+		last = *head;
+		while (last->next != NULL)
+			last = last->next;
+		last->next = new;
+	}
 
- return (new);
+	return (*head);
 }
