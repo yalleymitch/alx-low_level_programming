@@ -1,18 +1,18 @@
-#include <stdlib.h>
-#include <stdio.h>
 #ifndef LISTS_H
 #define LISTS_H
+
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * struct listint_s - it's a list that is only linked once
  * @e: it is a number or an integer
  * @next: it displays or identifies the next node
- *
  * Description: Structure of an individual linked list node for the Alx project
- * 
+ *
  */
-typedef struct listint_s
-{
+	typedef struct listint_s
+	{
 	int e;
 	struct listint_s *next;
 } listint_t;
